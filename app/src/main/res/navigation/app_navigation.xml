@@ -4,10 +4,17 @@
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/app_navigation"
             app:startDestination="@id/firstWeekDestination">
 
-    <fragment android:id="@+id/firstWeekDestination" android:name="com.example.kpi_rozklad.ui.firstWeek.FirstWeek"
-              android:label="First Week" tools:layout="@layout/first_week_fragment"/>
+    <fragment android:id="@+id/firstWeekDestination" android:name="com.example.kpi_rozklad.ui.firstWeek.FirstWeekFragment"
+              android:label="First Week" tools:layout="@layout/first_week_fragment" >
+        <action app:destination="@id/scheduleDetailDestination" android:id="@+id/next_action"/>
+    </fragment>
 
-    <fragment android:id="@+id/secondWeekDestination" android:name="com.example.kpi_rozklad.ui.secondWeek.SecondWeek"
+    <fragment android:id="@+id/secondWeekDestination" android:name="com.example.kpi_rozklad.ui.secondWeek.SecondWeekFragment"
               android:label="Second Week" tools:layout="@layout/second_week_fragment"/>
+
+    <fragment android:name="com.example.kpi_rozklad.ui.scheduleDetail.ScheduleDetailFragment" android:label="Some Name"
+            android:id="@+id/scheduleDetailDestination">
+        <action app:destination="@id/scheduleDetailDestination" android:id="@+id/next_action"/>
+    </fragment>
 
 </navigation>

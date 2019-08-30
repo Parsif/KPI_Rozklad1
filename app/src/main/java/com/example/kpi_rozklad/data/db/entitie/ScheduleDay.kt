@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 import com.example.kpi_rozklad.data.db.entitie.Teacher
 import com.google.gson.annotations.SerializedName
 
-const val ID = 0
+const val SCHEDULE_ID = 0
 
 @Entity(tableName = "schedule_table")
 data class ScheduleDay(
@@ -35,13 +35,13 @@ data class ScheduleDay(
     @SerializedName("teacher_name")
     val teacherName: String,
 
-//    @Embedded(prefix = "teacher_")
+//    @Embedded(prefix = "teacher_") // error
 //    val teachers: List<Teacher>,
     @SerializedName("time_end")
     val timeEnd: String,
     @SerializedName("time_start")
     val timeStart: String
 ) {
-    @PrimaryKey(autoGenerate = false)
-    var id: Int = ID
+    @PrimaryKey(autoGenerate = true)
+    var id : Int = SCHEDULE_ID
 }

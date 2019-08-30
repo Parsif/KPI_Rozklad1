@@ -2,4 +2,6 @@
     <string name="app_name">KPI_Rozklad</string>
     <string name="first_week">First Week</string>
     <string name="second_week">Second Week</string>
+    <string name="change_group">Change Group</string>
+    <string name="search_group">Search Group</string>
 </resources>

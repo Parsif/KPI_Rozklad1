@@ -2,6 +2,8 @@ package com.example.kpi_rozklad
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -43,5 +45,14 @@ class MainActivity : AppCompatActivity() {
         navView?.setupWithNavController(navController)
     }
 
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.app_bar_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return item!!.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
+    }
 
 }
